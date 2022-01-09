@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  font-family: "Ubuntu Mono";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Ubuntu Mono";
+  background: url("./assets/images/1.png");
+  overflow-x: hidden;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+.container {
+  max-width: 1140px;
+}
+

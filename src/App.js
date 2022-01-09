@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar/Navbar";
+import About from "./components/About/About";
+import Portfolio from "./components/Portfolio/Portfolio";
+import Contact from "./components/Contact/Contact";
+import logo from "./assets/images/logo1.png";
+import "./App.scss";
+import IMAGES_SKILLS from "./assets/index";
+import PROJECTS from "./components/Portfolio/projects";
+import ICONS from "./components/Contact/icons";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar logo={logo} />
+      <main className="container">
+        <About profileImage={require("./assets/images/prof-img.jpg")} imageSkills={IMAGES_SKILLS}/>
+        <Portfolio projects={PROJECTS} />
+      </main>
+      <Contact contactIcons={ICONS} />
+    </>
   );
 }
 

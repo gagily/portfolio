@@ -1,0 +1,43 @@
+.about-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: unset;
+  }
+
+  figure {
+    margin: 0 0 1rem;
+    text-align: center;
+  }
+  &__image {
+    max-width: 100%;
+    border-radius: 0.25rem;
+
+    &-container{
+      aspect-ratio: 1/1;
+    }
+  }
+
+  &__skills {
+    &-desc {
+        margin-top: -8px;
+    }
+
+    &__row {
+      display: flex;
+      justify-content: space-around;
+      &__icon {
+        width: 5rem;
+      }
+    }
+  }
+}
+

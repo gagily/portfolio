@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import "./portfolio.scss";
 
 function Portfolio({ projects }) {
@@ -16,6 +17,20 @@ function Portfolio({ projects }) {
         Click on the image title to see the projects. Some of projects are on
         free Heroku so be patient :)
       </p>
+      <Projects projects={projects} />
+    </section>
+  );
+}
+
+function Projects({ projects }) {
+  const rows = projects.reduce(function (rows, key, index) {
+    return (
+      (index % 2 == 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) &&
+      rows
+    );
+  }, []);
+  return (
+    <>
       {rows.map((row, i) => (
         <div className="portfolio-section__row row" key={i}>
           {row.map((project, index) => (
@@ -27,6 +42,8 @@ function Portfolio({ projects }) {
                 <img
                   className="portfolio-section__row__project-image"
                   src={project.image.src}
+                  srcSet={`${project.image.srcMobile} 440w, ${project.image.src} 768w`}
+                  sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 440px"
                   alt={project.image.alt}
                 />
                 <div className="portfolio-section__row__project-overlay">
@@ -57,7 +74,7 @@ function Portfolio({ projects }) {
           ))}
         </div>
       ))}
-    </section>
+    </>
   );
 }
 

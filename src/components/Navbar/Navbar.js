@@ -5,7 +5,7 @@ function Navbar({ logo }) {
   const [navSlide, setNavSlide] = useState(false);
 
   return (
-    <header className="navigation-wrapper ">
+    <header id="header-section" className="navigation-wrapper ">
       <nav className="navigation container">
         <div>
           <a href="#">
@@ -18,6 +18,7 @@ function Navbar({ logo }) {
             (navSlide ? "navigation__burger--active" : "")
           }
           onClick={() => setNavSlide(!navSlide)}
+          aria-label="toggle menu"
         >
           <span className="navigation__burger__line1"></span>
           <span className="navigation__burger__line2"></span>
